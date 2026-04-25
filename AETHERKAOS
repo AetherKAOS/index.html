@@ -5,3 +5,14 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/AetherKAOS/index.html.git
 git push -u origin main
+
+<header style="
+  background: linear-gradient(to right, #2b0000, #8b0000);
+  padding: 20px;
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 4px;
+  font-weight: bold;
+">
+  AETHERKAOS
+</header>
