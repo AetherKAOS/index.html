@@ -16,3 +16,185 @@ git push -u origin main
 ">
   AETHERKAOS
 </header>
+
+<h2 style="text-align:center; margin-top:40px;">SERIES</h2>
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:15px; padding:20px;">
+
+  <div class="card">
+    <img src="YOUR_IMAGE">
+    <p>The Crowns</p>
+  </div>
+
+  <div class="card">
+    <img src="YOUR_IMAGE">
+    <p>New Project</p>
+  </div>
+
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AetherKAOS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #1a0000, #000);
+      color: #eee;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 64px;
+      letter-spacing: 6px;
+      margin: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .hero p {
+      opacity: 0.7;
+      margin-top: 10px;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .enter-btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      background: #8b0000;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: fadeIn 4s ease forwards;
+    }
+
+    .enter-btn:hover {
+      background: #b30000;
+      transform: scale(1.05);
+    }
+
+    /* PARTICLES */
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(255,255,255,0.4);
+      animation: float 10s infinite linear;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MAIN CONTENT */
+    .content {
+      padding: 40px 20px;
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #111;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 30px rgba(139,0,0,0.6);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <h1>AETHERKAOS</h1>
+  <p>Power. Chaos. Legacy.</p>
+  <button class="enter-btn" onclick="enterSite()">Enter</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content" id="content">
+  <h2>Series</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />
+      <p>The Crowns</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d" />
+      <p>Coming Soon</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function enterSite() {
+    document.getElementById('hero').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  }
+
+  // generate particles
+  for (let i = 0; i < 60; i++) {
+    let p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (5 + Math.random() * 10) + 's';
+    document.body.appendChild(p);
+  }
+</script>
+
+</body>
+</html>
